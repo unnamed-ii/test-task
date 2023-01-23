@@ -1,26 +1,76 @@
 .card {
+  max-width: 320px;
+  width: 100%;
 
   &__main {
+    background-color: #fff;
+    padding: 21px 51px 0 51px;
+    border: 4px solid #1698D9;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    height: 480px;
+    position: relative;
 
-    &-question {
-
+    &-subtitle {
+      font-size: 16px;
+      line-height: 19px;
+      color: #666666;
+      margin-bottom: 5px;
     }
 
     &-title {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 56px;
+      margin-bottom: 15px;
 
+      &__filling {
+        font-size: 24px;
+        line-height: 28px;
+      }
     }
 
     &-amount {
-
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      color: #666666;
+      max-width: 127px;
     }
 
     &-weight {
+      width: 80px;
+      height: 80px;
+      background-color: #1698D9;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 42px;
+      line-height: 22px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      z-index: 1;
 
+      span {
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: -90px;
+      left: -35px;
     }
   }
 
   &__description {
-
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFF66;
   }
 
   &.available {
