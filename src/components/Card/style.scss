@@ -13,6 +13,8 @@
       position: relative;
       border-radius: 10px;
       opacity: .3;
+      transition: all .3s;
+      cursor: pointer;
 
       &-subtitle {
         font-size: 16px;
@@ -57,9 +59,7 @@
         bottom: 16px;
         right: 16px;
         z-index: 1;
-
-        span {
-        }
+        transition: all .3s;
       }
 
       img {
@@ -68,14 +68,14 @@
         left: -35px;
       }
     }
+  }
 
-    &__description {
-      font-size: 13px;
-      line-height: 15px;
-      text-align: center;
-      color: #FFFF66;
-      margin-top: 14px;
-    }
+  .link {
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+    color: #FFFF66;
+    margin-top: 14px;
   }
 
   &.available {
@@ -88,9 +88,19 @@
       }
     }
 
-    .card__description {
+    .link {
       color: #FFFFFF;
     }
   }
 
+  &.selected {
+
+    .card__main {
+      border: 4px solid #D91667;
+
+      &-weight {
+        background-color: #D91667;
+      }
+    }
+  }
 }

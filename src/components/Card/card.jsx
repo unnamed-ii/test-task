@@ -1,11 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './style.scss';
 import cat from '../../images/product-cat.png'
 
 export const Card = ({title, amount, description, weight, isAvailable}) => {
+    const [isSelected, setIsSelected] = useState(false);
+    const toggleSelectingProduct = () => {
+        setIsSelected(!isSelected);
+    }
 
     return (
-        <div className={"card__wrapper " + (isAvailable && "available")}>
+        <div className={"card__wrapper " + (isAvailable && "available ") + (isSelected && "selected")}
+             onClick={toggleSelectingProduct}>
             <div className="card">
                 <div className="card__main">
                     <div className="card__main-subtitle">
@@ -26,7 +31,7 @@ export const Card = ({title, amount, description, weight, isAvailable}) => {
                     <img src={cat} alt="Image"/>
                 </div>
             </div>
-            <div className="card__description">
+            <div className="link">
                 {isAvailable
                     ? description
                     : `Печалька с ${title} законился`
