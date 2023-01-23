@@ -76,6 +76,11 @@
     text-align: center;
     color: #FFFF66;
     margin-top: 14px;
+
+    span {
+      color: #22A7E9;
+      cursor: pointer;
+    }
   }
 
   &.available {

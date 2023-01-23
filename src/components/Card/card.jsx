@@ -5,14 +5,13 @@ import cat from '../../images/product-cat.png'
 export const Card = ({title, amount, description, weight, isAvailable}) => {
     const [isSelected, setIsSelected] = useState(false);
     const toggleSelectingProduct = () => {
-        setIsSelected(!isSelected);
+        if (isAvailable) setIsSelected(!isSelected)
     }
 
     return (
-        <div className={"card__wrapper " + (isAvailable && "available ") + (isSelected && "selected")}
-             onClick={toggleSelectingProduct}>
+        <div className={"card__wrapper " + (isAvailable && "available ") + (isSelected && "selected")}>
             <div className="card">
-                <div className="card__main">
+                <div className="card__main" onClick={toggleSelectingProduct}>
                     <div className="card__main-subtitle">
                         Котэ не одобряет?
                     </div>
@@ -31,12 +30,17 @@ export const Card = ({title, amount, description, weight, isAvailable}) => {
                     <img src={cat} alt="Image"/>
                 </div>
             </div>
-            <div className="link">
-                {isAvailable
-                    ? description
-                    : `Печалька с ${title} законился`
-                }
-            </div>
+            {isAvailable
+                ? <div className="link">
+                    {isSelected
+                        ? description
+                        : <div>Чего сидишь? Порадуй котэ, <span onClick={toggleSelectingProduct}>купи.</span></div>
+                    }
+                </div>
+                : <div className="link">
+                    Печалька, с {title} закончился.
+                </div>
+            }
         </div>
     );
 };
