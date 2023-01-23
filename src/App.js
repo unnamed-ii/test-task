@@ -17,6 +17,7 @@ function App() {
                             amount={product.amount}
                             description={product.description}
                             weight={product.weight}
+                            isAvailable={product.isAvailable}
                         />
                     ))}
                 </div>
